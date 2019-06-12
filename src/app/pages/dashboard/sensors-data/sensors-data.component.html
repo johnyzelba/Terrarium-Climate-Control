@@ -1,0 +1,47 @@
+<nb-card size="large">
+  <div class="chart-container"  *ngIf="chartData">
+    <div class="chart-header">
+      <div class="header-stats">
+        <div class="stats-block">
+          <div class="subtitle">Temperture</div>
+          <div>
+            <span class="value">{{  this.calcAvg(this.chartData[0].data) }}</span>
+            <span class="unit">°C</span>
+          </div>
+        </div>
+        <div class="stats-block">
+          <div class="subtitle">Moisture</div>
+          <div>
+            <span class="value">15</span>
+            <span class="unit">%</span>
+          </div>
+        </div>
+        <div class="stats-block">
+          <div class="subtitle">EC</div>
+          <div>
+            <span class="value">8.5</span>
+            <span class="unit">ppm</span>
+          </div>
+        </div>
+      <div class="stats-block">
+        <div class="subtitle">PH</div>
+        <div>
+          <span class="value">6.0</span>
+        </div>
+      </div>
+    </div>
+      <div class="dropdown"
+           [ngClass]="{ 'ghost-dropdown': currentTheme === 'corporate' }"
+           ngbDropdown>
+        <button type="button" ngbDropdownToggle class="btn"
+                [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+          {{ type }}
+        </button>
+        <ul class="dropdown-menu" ngbDropdownMenu>
+          <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
+        </ul>
+      </div>
+    </div>
+    <ngx-sensorsdata-chart [echartsIntance]="echartsIntance" [series]="chartData"></ngx-sensorsdata-chart>
+  </div>
+</nb-card>

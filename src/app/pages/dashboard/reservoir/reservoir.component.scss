@@ -1,0 +1,130 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/components/card/card.component.theme';
+@import '~@nebular/theme/styles/global/typography/typography';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~@nebular/bootstrap/styles/hero-buttons';
+
+@include nb-install-component() {
+
+.row {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 4% 0 4% 0;
+
+  .container {
+    padding: 0;
+    border-radius: 0 0 10% 10%; 
+    margin-bottom: 3vw;
+
+    .borderdiv {
+    height: 100%;
+    border-radius: 0 0 10% 10%; 
+    background-image: linear-gradient(#fbfcff, #edf2fc);
+    padding: 10px;
+    border:0;
+ 
+    }
+  }
+}
+
+nb-tabset{
+  height: 100%;
+  
+  /deep/ .tabset{
+    border-bottom: 0px;
+  }
+}
+
+nb-tab {
+  height: 100%;
+  border-width: 0;
+
+  content-active {
+      display: contents;
+  }
+
+}
+
+    .btn {
+        color: #73a1ff;
+    }
+
+    .btn:hover {
+        color: #85acfc;
+    }
+    .btn:focus {
+        color: #73a1ff;
+    }
+
+    .bucket {
+      width:100%;
+      bottom:0px;
+      overflow: hidden;
+      display: flex;
+    }
+    .block-container {
+      position: absolute;
+      top: 1vw;
+    .stats-block {
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+      color: nb-theme(color-fg);
+      padding: 0.5rem 1.5rem;
+      margin: auto;
+      color: #1f4aa5;
+      border: 0;
+  
+      .subtitle {
+        font-size: 1.7rem;
+        font-weight: nb-theme(font-weight-light);
+      }
+  
+      .value {
+        font-family: nb-theme(font-secondary);
+        font-size: 2.5rem;
+        font-weight: nb-theme(font-weight-bold);
+      }
+  
+      .unit {
+        font-family: nb-theme(font-secondary);
+        font-size: 2.25rem;
+        font-weight: nb-theme(font-weight-light);
+      }
+    }
+  }
+    .waterblock {
+      background-color: #4478e3;
+    }
+    .waterblockfooter {
+      background-color: #4478e3;
+      border-radius: 0 0 24% 24%/140%;
+    }
+    .waves {
+      width:100%;
+      overflow:visible;
+      display: inline-block;
+      align-self: flex-end;
+    }
+    
+    .wave {
+      animation: wave 3s linear;
+      animation-iteration-count:infinite;
+      fill: #4478e3;
+    }
+    #wave2 {
+      animation-duration:5s;
+      animation-direction: reverse;
+      opacity: .6
+    }
+    #wave3 {
+      animation-duration: 7s;
+      opacity:.3;
+    }
+
+    @keyframes wave {
+      to {transform: translateX(-100%);}
+    }
+  }

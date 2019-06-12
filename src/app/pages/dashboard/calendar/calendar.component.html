@@ -1,0 +1,18 @@
+<nb-card size="large">
+  <nb-tabset fullWidth>
+    <nb-tab tabTitle="Calendar">
+      <div class="row">
+        <div class="ion-container col-xxxl-12 col-xxl-12 col-lg-12 col-md-12  d-flex flex-column align-items-center justify-content-center">
+          <nb-calendar
+            [(date)]="date2"
+            [dayCellComponent]="dayCellComponent"
+            [showHeader]="false"
+          ></nb-calendar>
+
+        </div>
+      </div>
+      <nb-card-header _ngcontent-c25="">Cycle Progresion</nb-card-header>
+      <nb-progress-bar [(value)]="value" status="primary" size="xlg">{{ value }}%</nb-progress-bar>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>

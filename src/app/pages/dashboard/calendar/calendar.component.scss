@@ -1,0 +1,45 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .calendars-container {
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: nb-theme(font-size-xlg);
+    text-align: center;
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .nebular-calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  /deep/ nb-tabset .tabset {
+    border: 0; 
+  }
+
+  /deep/ nb-base-calendar nb-card{
+    border: 0;
+    margin-top: 1.25rem;
+
+  }  
+  /deep/ nb-card-header {
+    padding: 0 2.5rem 0 2.5rem;
+  }
+  /deep/ nb-progress-bar {
+    padding: 10px 2.5rem 0 2.5rem;
+  }
+
+  /deep/ nb-card-body {
+    padding: 1.25rem 0 0 0;
+  }
+}
+
+

@@ -1,0 +1,169 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/components/card/card.component.theme';
+@import '~@nebular/theme/styles/global/typography/typography';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~@nebular/bootstrap/styles/hero-buttons';
+
+
+@include nb-install-component() {
+  svg {
+    display: block;
+    margin: auto;
+    width: 79%;
+  }
+  nb-card {
+    height: inherit;
+  }
+ 
+  .list-card {
+    margin: 0;
+    min-height: 9.4rem;
+    nb-card-header {
+      border-bottom: none;
+    }
+
+    nb-card-body {
+      padding: 0;
+    }
+  }
+
+  .row {
+    width: 100%;
+    margin: 0;
+    padding: 4% 0 4% 0;
+  }
+  .col {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .stroke-pattern {
+    fill: none;
+    stroke: #bdc4cd;
+    stroke-miterlimit: 10;
+    opacity: 1;
+    stroke-width: 1px;
+  }
+
+  .stroked-element {
+    stroke-width: 4px;
+    stroke: #bdc4cd;
+    stroke-miterlimit: 10;
+    fill: url('#New_Pattern_Swatch_1');
+  }
+
+  .plant-border {
+    stroke-width: 0;
+    stroke:none;
+    stroke-miterlimit: 10;
+    fill: #bdc4cd;
+  }
+  .stats-block {
+    margin-top: 1rem;
+    display: block;
+    flex-direction: column;
+    align-items: normal;
+    color: nb-theme(color-fg);
+    padding: 0 1.5rem;
+
+    .subtitle {
+      font-size: 1.5rem;
+      font-weight: nb-theme(font-weight-light);
+    }
+
+    .value {
+      font-family: nb-theme(font-secondary);
+      font-size: 2rem;
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(color-fg-heading);
+    }
+    .date {
+      font-family: nb-theme(font-secondary);
+      font-size: 1.5rem;
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(color-fg-heading);
+    }
+
+    .unit {
+      font-family: nb-theme(font-secondary);
+      font-size: 1.75rem;
+      font-weight: nb-theme(font-weight-light);
+    }
+  }
+  .plant-bg {
+    fill: nb-theme(card-bg);
+    stroke: transparent;
+    cursor: pointer;
+    stroke-width: 4px;
+  }
+
+  .plant-bg-border-grad {
+    fill: none;
+    stroke: none;
+    stroke-width: 4px;
+  }
+
+  .plant-text {
+    cursor: pointer;
+    user-select: none;
+    pointer-events: none;
+    fill: nb-theme(corporate);
+    font-family: Roboto;
+    font-size: 0.3rem;
+    font-weight: 300;
+  }
+  .plant-container {
+    max-height: 23rem;
+  }
+  .selected-plant {
+    z-index: 40;
+
+    .plant-text {
+      fill: nb-theme(color-fg-heading);
+      font-weight: nb-theme(font-weight-bolder);
+    }
+    .plant-border {
+      stroke: nb-theme(color-success);
+    }
+  
+
+
+  .header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  nb-for-theme {
+    .stroke-pattern, .stroked-element, .plant {
+      stroke: #a1a1e5;
+    }
+
+    .plant-text {
+      fill: #a1a1e5;
+    }
+
+    .selected-plant {
+      .plant-text {
+        font-weight: nb-theme(font-weight-normal);
+      }
+      .plant-bg {
+        fill: rgba(0, 255, 170, 0.2);
+        filter: url('#f2');
+      }
+      .plant-border {
+        stroke: #00f9a6;
+      }
+      .plant-border-glow {
+        filter: url('#f2');
+      }
+    }
+  }
+
+    .selected-plant {
+      .plant-border {
+        stroke: nb-theme(color-primary);
+      }
+    }
+  }
+}

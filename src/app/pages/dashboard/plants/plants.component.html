@@ -1,0 +1,52 @@
+<nb-card size="large">
+  <nb-tabset fullWidth>
+    <nb-tab tabTitle="Plants Information">
+      <div class="row">
+        <div class="plant-container col-xxxl-4 col-md-6 d-flex flex-column align-items-right" *ngFor="let plant of plantSvg" (click)="overplant(plant.id)" >
+            <div class="row">
+                <div class="plant-container col-xxxl-6 col-md-6" style="padding-right: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                [attr.viewBox]="viewBox" preserveAspectRatio="xMidYMid">
+              <defs>
+                <filter id="f2" >
+                  <feGaussianBlur result="blurOut" in="StrokePaint" stdDeviation="3"/>
+                </filter>
+              </defs>
+              <g [attr.id]="plant.id" class="plant" >
+                <path class="plant" [attr.d]="plant.area.d" [style.filter]="isIE || isFirefox ? 'inherit': ''" [attr.fill]="plant.fill"/>
+                <text class="plant-text"  text-anchor="middle" [attr.font-size]="plant.name.fontSize" [attr.x]="plant.name.x" [attr.y]="plant.name.y" [attr.fill]="plant.fill">
+                  {{plant.name.text}}
+                </text>
+              </g>
+            </svg>
+            </div>
+            <div class="plant-container col-xxxl-6 col-md-6" style="padding-left: 0;">
+            <nb-card class="list-card">
+              <nb-list>
+                <nb-list-item>
+                  <nb-user name="Soil Moisture" [title]="plant.moisture">
+                  </nb-user>
+                </nb-list-item>
+                <nb-list-item>
+                    <nb-user name="Planting Date" [title]="plant.date | date">
+                    </nb-user>
+                </nb-list-item>
+                <nb-list-item>
+                    <nb-user name="Bloom Date" [title]="plant.date | date">
+                    </nb-user>
+                  </nb-list-item>
+                  <nb-list-item>
+                      <nb-user name="Harvest Date" [title]="plant.date | date">
+                      </nb-user>
+                  </nb-list-item>
+              </nb-list>
+            </nb-card>
+            </div>
+            </div>
+          </div>
+        </div>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>
+
+

@@ -1,0 +1,25 @@
+<nb-card size="large">
+    <nb-tabset fullWidth>
+        <nb-tab tabTitle="Light Timer"  *ngIf="timepickerData">
+            <div class="row">
+                <div class="ion-container col-xxxl-4 col-xxl-4 col-lg-4 col-md-4  d-flex flex-column align-items-center justify-content-center">
+                    <i class="ion-ios ion-ios-sunny" ></i>
+                </div>
+                <div class="timepicker-container col-xxxl-8 col-xxl-8 col-lg-8 col-md-8">
+                    <ngb-timepicker [(ngModel)]="timepickerData.startTime" [meridian]="meridian" ></ngb-timepicker>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ion-container col-xxxl-4 col-xxl-4 col-lg-4 col-md-4  d-flex flex-column align-items-center justify-content-center">
+                    <i class="ion-ios ion-ios-moon" ></i>
+                </div>
+                <div class="timepicker-container col-xxxl-8 col-xxl-8 col-lg-8 col-md-8">
+                    <ngb-timepicker [(ngModel)]="timepickerData.endTime" [meridian]="meridian" (click) = "SendDataToServer()"></ngb-timepicker>
+                </div>
+            </div>
+            <div class="slider-container ng-star-inserted">
+                <div class="power-bg" ng-reflect-klass="power-bg" ng-reflect-ng-class="[object Object]"><i _ngcontent-c30="" class="nb-power-circled"></i></div>
+            </div>
+        </nb-tab>
+    </nb-tabset>
+</nb-card>
